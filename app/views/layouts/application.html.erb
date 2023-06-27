@@ -25,12 +25,12 @@
           <%= link_to("土木メモ", "/") %>
         <% end %>
       </div>
-  
-
-
        
       <ul class="header-menus">
         <% if @current_user %>
+          <li>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+          </li>
           <li>
             <%= link_to("新規投稿", "/posts/new") %>
           </li>
@@ -45,19 +45,19 @@
              <%= link_to("ユーザー一覧", "/users/index") %>
           </li>
           <li>
-            <%= button_to("ログアウト","/logout",{method:"post"}) %>
+          <%= link_to "ログアウト",destroy_user_session_path, data: { "turbo-method": :delete} %>
           </li>
         <%else%>
-           <li>
+          <li>
             <%= link_to("土木メモとは", "/about") %>
           </li>
           <li>
-            <%= link_to("新規登録", "/signup") %>
+            <%= link_to("新規登録", "/users/sign_up") %>
           </li>
           <li>
-            <%= link_to("ログイン", "/login") %>
+            <%= link_to("ログイン", "/users/sign_in") %>
           </li>
-         <% end %>
+        <% end%>
       </ul>
     </header>
     <% if flash[:notice]%>

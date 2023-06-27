@@ -38,7 +38,7 @@
   /* 共通レイアウト ================================ */
   body {
     color: #2d3133;
-    background-color: #3ecdc6;
+    background-color: #3ecdc5;
     margin: 0;
     min-height: 1vh;
   }
@@ -144,6 +144,12 @@
   .top-main p {
     font-size: 24px;
   }
+
+  .top-logout{
+    color: #bcc8d4;
+    font-size: large;
+  }
+
   
   /* about ================================ */
   .about-main {
