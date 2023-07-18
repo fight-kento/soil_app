@@ -6,15 +6,12 @@ class ApplicationController < ActionController::Base
         @current_user=User.find_by(id: session[:user_id])
     end
 
-    def after_sign_in_path_for(resource)
-        home_top_path
-    end
 
 
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email,:image])
       devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
     end
 end
