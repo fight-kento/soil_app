@@ -9,8 +9,15 @@
               <%= message %>
             </div>
           <% end %>
-          <textarea name="content"><%= @post.content %></textarea>
-          <input type="submit" value="投稿">
+          <div class="titles">
+            <p>タイトル</p>
+            <textarea name="titles"><%= @post.titles %></textarea>
+          </div>
+          <div class="content">
+            <p>本文</p>
+            <textarea name="content"><%= @post.content %></textarea>
+            <input type="submit" value="投稿">
+          </div>
         </div>
       </div>
     <% end %>

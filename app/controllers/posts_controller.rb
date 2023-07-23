@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_correct_user!, {only: [:edit, :update, :destroy]}
+
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @likes_count = {}
+    @posts.each do |post|
+      @likes_count[post.id] = Like.where(post_id: post.id).count
+    end
   end
 
   def  show
@@ -18,6 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(
+      titles: params[:titles],
       content: params[:content],
       user_id: current_user.id)
     if @post.save
