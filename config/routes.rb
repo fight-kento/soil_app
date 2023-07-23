@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  devise_scope :user do
+    get 'users/destroy', to: 'users/sessions#destroy'
+  end 
+  
+
+
   get '/'=>'home#top'
   get 'about'=>'home#about'
 
@@ -21,12 +31,26 @@ Rails.application.routes.draw do
   post "users/:id/update" => "users#update"
   get "users/:id/likes" => "users#likes"
 
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
-  }
-  devise_scope :user do
-    get 'users/destroy', to: 'users/sessions#destroy'
-  end 
+
+
+  get 'relationships/followings'
+  get 'relationships/followers'
+
+    # フォロー機能
+    resources :users do
+      member do
+        get :followings
+        get :followers
+      end
+    end
+
+    resources :users do
+      resource :relationships, only: [:create, :destroy]
+      get :followings, on: :member
+      get :followers, on: :member
+    end
+
+
+
   
 end
