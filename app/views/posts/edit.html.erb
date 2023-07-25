@@ -9,7 +9,16 @@
               <%= message %>
             </div>
           <% end %>
-          <textarea name="content"><%= @post.content %></textarea>
+          <%= form_with(url: posts_new_path, local: true) do |form| %>
+            <div class="titles">
+              <p>タイトル</p>
+              <%= form.text_field :title, value: @post.titles %>        
+            </div>
+            <div class="content">
+              <p>本文</p>
+              <%= form.rich_text_area :content , value: @post.content, class: "custom-text" %>
+            </div>
+          <% end %>
           <input type="submit" value="保存">
         </div>
       </div>
