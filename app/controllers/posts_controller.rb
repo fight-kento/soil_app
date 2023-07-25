@@ -55,4 +55,8 @@ class PostsController < ApplicationController
     redirect_to("/posts/index")
   end
   
+  def post_params
+    params.require(:@post).permit(:title, :content)
+  end
+
 end

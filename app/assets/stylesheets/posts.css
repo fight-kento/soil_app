@@ -103,13 +103,14 @@
   border: 1px solid rgb(216, 218, 223);
   resize: none;
 }
-.content textarea {
+.custom-text {
   font-size: 20px;
   padding: 10px;
   min-height: 140px;
   border: 1px solid rgb(216, 218, 223);
   resize: none;
 }
+
 
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
