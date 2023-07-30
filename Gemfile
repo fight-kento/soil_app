@@ -74,3 +74,5 @@ end
 gem 'devise'
 
 gem 'actiontext'
+
+gem "font-awesome-rails"
