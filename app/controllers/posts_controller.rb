@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   def  show
     @post = Post.find_by(id: params[:id])
+    @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
+    @comment = current_user.comments.new
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
   end
@@ -21,6 +23,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(
+
       titles: params[:titles],
       content: params[:content],
       user_id: current_user.id)

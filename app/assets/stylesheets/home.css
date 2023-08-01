@@ -79,6 +79,7 @@
     color: white;
     font-size: 30px;
     line-height: 64px;
+    text-align: center;
   }
 
   .header-logo a{
@@ -210,6 +211,17 @@
       transition: all 0.5s;
     }
 
+  /* login ================================ */
+    .login-form{
+      text-align:center;
+    }
+    .field{
+    color: blueviolet;
+    }
+
+
+
+
   
   /* top ================================ */
   .top-main {
@@ -288,7 +300,7 @@
     font-weight: 300;
     margin: 60px 0 20px;
     font-size: 48px;
-    color: #bcc8d4;
+    color: white;
   }
   
   .form-body {

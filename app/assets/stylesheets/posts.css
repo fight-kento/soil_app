@@ -61,9 +61,21 @@
   margin-left: 15px;
 }
 
-.posts-show-item p {
+
+.post-show-title {
   font-size: 24px;
-  margin: 20px 0;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.post-show-content {
+  font-size: 24px;
+}
+
+.post-show-comment{
+  font-size: 20px;
+  margin-top: 25px;
+
 }
 
 .post-time {
@@ -93,6 +105,8 @@
   text-decoration: underline;
   font-size: 14px;
 }
+
+
 
 /* posts/new ================================ */
 

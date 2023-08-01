@@ -1,18 +1,17 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-     <div class="post-user-name">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      <div class="post-user-name">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{@user.image}" %>">
+        </div> 
+        <div class="user-right">
+          <%= link_to(@user.name, "/users/#{@user.id}") %>
+        </div>
       </div>
-      <p>
-        <%= @post.titles %>
-      </p>
-      <p>
-        <%= @post.content %>
-      </p>
-      <div class="post-time">
-        <%= @post.created_at.to_s(:datetime_jp) %>
-      </div>
+
+      <p class="post-show-title">タイトル：<%= @post.titles %></p>
+      <p class="post-show-content"><%= @post.content %></p>
 
       <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
         <%= link_to("/likes/#{@post.id}/destroy",data: { "turbo-method": :post }) do %>
@@ -26,12 +25,41 @@
 
       <%= @likes_count %>
 
-      <% if @post.user_id == current_user.id %>
+      <div class="post-time">
+        <%= @post.created_at.to_s(:datetime_jp) %>
+              <% if @post.user_id == current_user.id %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{@post.id}/edit") %>
           <%= link_to("削除","/posts/#{@post.id}/destroy", data: { "turbo-method": :delete })  %>
         </div>
       <% end%>
+      </div>
+
+
+          <hr>
+      <% @comments.each do |comment| %>
+        <div class="post-user-name">
+          <div class="user-left"> 
+            <img src="<%= "/user_images/#{comment.user.image}" %>">
+          </div> 
+          <div class="user-right">
+            <%= link_to(@user.name, "/users/#{@user.id}") %>
+          </div>
+        </div>
+        <div class="post-show-comment">
+          <%= comment.comment_content %>
+        </div>
+        <div class="post-time">
+          <%= comment.created_at.to_s(:datetime_jp) %>
+        </div>
+        <hr>
+      <% end %>
+
+      <%= form_for [@post, @comment] do |f| %>
+        <%= f.text_field :comment_content, style: "width: 300px; height: 100px;" %>
+<br>
+        <%= f.submit 'コメントする' %>
+      <% end %>
     </div>
   </div>
 </div>
