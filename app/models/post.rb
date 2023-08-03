@@ -13,4 +13,14 @@ class Post < ApplicationRecord
 
   has_rich_text :content
 
+
+
+  def self.search(keyword)
+    where(["titles LIKE ? OR content LIKE ?", "%#{keyword}%", "%#{keyword}%"])
+  end
+  
+  
+
+
+
 end

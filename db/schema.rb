@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_30_063341) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_03_131357) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -67,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_063341) do
   end
 
 # Could not dump table "posts" because of following StandardError
-#   Unknown type 'string' for column 'titles'
+#   Unknown type '' for column 'titles'
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"

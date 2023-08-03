@@ -58,8 +58,17 @@ class PostsController < ApplicationController
     redirect_to("/posts/index")
   end
   
-  def post_params
-    params.require(:@post).permit(:title, :content)
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
   end
+
+
+  def post_params
+    params.require(:@post).permit(:titles, :content)
+  end
+
+
 
 end
