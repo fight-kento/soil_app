@@ -1,4 +1,17 @@
 <div class="main posts-index">
+  <div class="user-ranking">
+      <h1 class="ranking-heading">ユーザーランキング</h1>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image}" %>">
+        </div>
+        <div class="user-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <div class="container">
     <h1 class="users-heading">タイムライン</h1>
     <% @posts.each do |post| %>
@@ -10,10 +23,12 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
-          <%= link_to(post.titles, "/posts/#{post.id}") %>
-        </div>
-        <div class="post-time">
-          <%= time_ago_in_words(post.updated_at) %>
+          <div class="post-titles">
+            <%= link_to(post.titles, "/posts/#{post.id}") %>
+            <div class="post-time">
+              <%= time_ago_in_words(post.updated_at) %>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

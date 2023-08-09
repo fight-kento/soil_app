@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @posts.each do |post|
       @likes_count[post.id] = Like.where(post_id: post.id).count
     end
+    @users = User.all
   end
 
   def  show

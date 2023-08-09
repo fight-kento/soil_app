@@ -1,7 +1,14 @@
 /* posts/index ================================ */
+.main.posts-index {
+  display: flex;
+  justify-content: center; /* コンテンツを水平方向に中央に配置 */
+}
+
+
 .posts-index-item {
-  padding: 20px 30px;
+  padding: 25px 30px;
   background-color: white;
+  margin-bottom: 5px;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -15,7 +22,7 @@
 }
 
 .post-user-name a {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .post-user-name a:hover {
@@ -33,6 +40,25 @@
   padding-left: 25px;
   text-align: left;
 }
+
+.user-ranking{
+  max-width: 300px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.ranking-heading{
+  font-weight: 300;
+  margin: 60px 0 20px;
+  font-size: 20px;
+}
+
+.post-titles a {
+  font-weight: 700;
+  font-size: 16px;
+
+}
+
 
 /* posts/show ================================ */
 .posts-show form {
@@ -80,7 +106,9 @@
 
 .post-time {
   color: #8899a6;
-  margin-bottom: 10px;
+  font-size: 14px;
+  float: right;
+  margin-right: 100px;
 }
 
 .unliked-btn {
@@ -104,6 +132,26 @@
   color: #8899a6;
   text-decoration: underline;
   font-size: 14px;
+}
+
+.post_message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.likes-count {
+  margin-left: 5px; /* いいねボタンとの間隔を調整 */
+}
+
+.post-show-content {
+  margin: 0;
 }
 
 
