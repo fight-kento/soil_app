@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end 
   
 
-
   get '/'=>'home#top'
   get 'about'=>'home#about'
 
@@ -24,17 +23,17 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   delete "posts/:id/destroy" => "posts#destroy"
 
-
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   get "users/:id/edit" => "users#edit"
   post "users/:id/update" => "users#update"
   get "users/:id/likes" => "users#likes"
 
-
-
   get 'relationships/followings'
   get 'relationships/followers'
+
+  get 'search' => 'posts#search'
+
 
     # フォロー機能
     resources :users do

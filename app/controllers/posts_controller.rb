@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @posts.each do |post|
       @likes_count[post.id] = Like.where(post_id: post.id).count
     end
+    @users = User.all
   end
 
   def  show
@@ -58,8 +59,17 @@ class PostsController < ApplicationController
     redirect_to("/posts/index")
   end
   
-  def post_params
-    params.require(:@post).permit(:title, :content)
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
   end
+
+
+  def post_params
+    params.require(:@post).permit(:titles, :content)
+  end
+
+
 
 end

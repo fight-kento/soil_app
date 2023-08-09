@@ -1,23 +1,26 @@
 /* users/index ================================ */
+.main.users-index {
+  display: flex;
+  justify-content: center; /* コンテンツを水平方向に中央に配置 */
+}
+
+
 .users-heading {
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
-  color: white  ;
 }
 
 .users-index-item {
-  padding: 20px 30px;
-  background-color: white;
+  padding: 5px 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
   display: table;
   width: 100%;
 }
 
 .user-left img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
@@ -37,11 +40,13 @@
 }
 
 .user-right {
+  float: left;
   width: 90%;
+  padding-left: 25px;
   text-align: left;
-  display: table-cell;
-  vertical-align: middle;
 }
+
+
 
 /* users/show ================================ */
 .user-show {
