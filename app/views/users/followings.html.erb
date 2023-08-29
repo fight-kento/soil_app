@@ -1,7 +1,6 @@
 <div class="main users-follow">
   <div class="container">
-
-      <h1>FOLLOWING</h1>
+      <h1 class="users-heading">FOLLOWING</h1>
       <table class="table text-center">
         <thead>
           <tr>
@@ -10,25 +9,19 @@
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
+          <% @users.each do |users| %>
             <tr>
               <td>
-                <%= link_to user_path(user) do %>
-                  <%= user.name %>
-                <% end %>
-              </td>
-              <td>
-                <% if user = current_user %>
-                  <% if user.following?(current_user) %>
-                    <%=link_to user_relationships_path(user), method: :delete do %>
-                      <button type="button" class="btn btn btn-danger">フォロー解除</button>
-                    <% end %>
-                  <% else %>
-                    <%=link_to user_relationships_path(user), method: :post do %>
-                      <button type="button" class="btn btn btn-primary">フォロー</button>
-                    <% end %>
-                  <% end %>
-                <% end %>
+                        <%= link_to user_path(users), class: "user-link" do %>
+                        <div class="user-container">
+                            <div class="user-left">
+                                <img src="<%= "/user_images/#{users.image}" %>">
+                            </div>
+                            <div class="user-right">
+                                <%= users.name %>
+                            </div>
+                            </div>
+                        <% end %>
               </td>
             </tr>
           <% end %>

@@ -79,3 +79,4 @@ gem "font-awesome-rails"
 
 gem 'rails-i18n'
 
+gem 'jquery-rails'

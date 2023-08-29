@@ -16,8 +16,7 @@
             </div>
             <div class="content">
               <p>本文</p>
-              <%= form.rich_text_area :content , value: @post.content, class: "custom-text" %>
-            </div>
+             <textarea name="content"><%= @post.content %></textarea>            </div>
           <% end %>
           <input type="submit" value="保存">
         </div>
