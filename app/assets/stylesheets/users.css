@@ -12,15 +12,40 @@
 }
 
 .users-index-item {
-  padding: 5px 10px;
+  padding: 10px 5px;
   overflow: hidden;
-  display: table;
+  display: flex;
+  width: 100%;
+  margin-bottom: 4px;
+  border-radius: 10px;
+}
+
+.posts-index-item {
+  padding: 25px 30px;
+  background-color: white;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.ranking-index-item {
+  padding: 5px 5px;
+  overflow: hidden;
+  display: flex;
   width: 100%;
 }
 
 .user-left img {
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.ranking-left img{
+  width: 20px;
+  height: 20px;
   border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
@@ -30,23 +55,66 @@
   font-weight: 600;
 }
 
+
 .user-name a:hover {
   color: #3ecdc6;
 }
 
 .user-left {
   float: left;
-  width: 10%;
+  padding-left: 12px;
+}
+
+.rankning-left{
+  float: left;
 }
 
 .user-right {
   float: left;
   width: 90%;
-  padding-left: 25px;
+  padding-left: 12px;
   text-align: left;
 }
 
 
+.ranking-right{
+  float: left;
+  width: 90%;
+  padding-left: 12px;
+  text-align: left;
+}
+
+/* follow ================================ */
+.user-link {
+  display: inline-block; /* インラインブロック要素として表示 */
+  text-decoration: none; /* リンクの下線を削除 */
+  margin: 10px; /* 要素間の余白を設定 */
+}
+
+.user-container {
+  display: flex; /* フレックスコンテナとして表示 */
+  align-items: center; /* アイテムを垂直方向に中央揃え */
+}
+
+.follow-left img {
+  width: 20px;
+  height: 20px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.follow-left {
+  float: left;
+  padding-left: 27px;
+}
+
+.follow-right {
+  float: left;
+  width: 90%;
+  padding-left: 12px;
+  text-align: left;
+}
 
 /* users/show ================================ */
 .user-show {
@@ -70,6 +138,7 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
+  padding-bottom: 20px;
 }
 
 .user p {
@@ -102,7 +171,7 @@
 }
 
 .user-tabs li.active {
-  border-bottom: 2px solid #3ecdc6;
+  border-bottom: 2px solid #398d84;
 }
 
 .user-tabs li.active a {

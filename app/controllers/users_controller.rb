@@ -4,16 +4,19 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @all_ranks = User.joins(:posts).select("users.*, COUNT(posts.id) as post_count").group("users.id").order("post_count desc").limit(3)
   end
 
   def followings
     user =User.find(params[:id])
     @users =user.followings
+    @user = User.find_by(id: params[:id])
   end
 
   def followers
     user =User.find(params[:id])
     @users =user.followers
+    @user = User.find_by(id: params[:id])
   end
 
 

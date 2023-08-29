@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end 
   
 
-  get '/'=>'home#top'
+  get '/'=>'posts#index'
   get 'about'=>'home#about'
 
   post "likes/:post_id/create" => "likes#create"

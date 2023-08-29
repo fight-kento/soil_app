@@ -10,39 +10,31 @@
         </div>
       </div>
 
-
       <p class="post-show-title">タイトル：<%= @post.titles %></p>
-
       <div class="post_message">
         <p class="post-show-content"><%= @post.content %></p>
-        <div class="like-section">
-          <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-            <%= link_to("/likes/#{@post.id}/destroy", data: { "turbo-method": :post }) do %>
-              <span class="fa fa-heart liked-btn"></span>
-            <% end %>
-          <% else %>
-            <%= link_to("/likes/#{@post.id}/create", data: { "turbo-method": :post }) do %>
-              <span class="fa fa-heart unliked-btn"></span>
-            <% end %>
-          <% end %>
-          <span class="likes-count"><%= @likes_count %></span>
-        </div>
       </div>
-
-
-
       <div class="post-time">
-              <% if @post.user_id == current_user.id %>
+        <%= @post.created_at.to_s(:datetime_jp) %>
+      </div>
+      <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+        <%= link_to("/likes/#{@post.id}/destroy", data: { "turbo-method": :post }) do %>
+          <span class="fa fa-heart liked-btn"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create", data: { "turbo-method": :post }) do %>
+          <span class="fa fa-heart unliked-btn"></span>
+        <% end %>
+      <% end %>
+      <%= @likes_count %>
+      <% if @post.user_id == current_user.id %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{@post.id}/edit") %>
           <%= link_to("削除","/posts/#{@post.id}/destroy", data: { "turbo-method": :delete })  %>
         </div>
       <% end%>
-             <%= @post.created_at.to_s(:datetime_jp) %>
-      </div>
-
-
-          <hr>
+      <br>
+      <hr>
       <% @comments.each do |comment| %>
         <div class="post-user-name">
           <div class="user-left"> 

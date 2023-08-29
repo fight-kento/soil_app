@@ -12,11 +12,11 @@
           <%= form_with(url: posts_new_path, local: true) do |form| %>
             <div class="titles">
               <p>タイトル</p>
-              <%= form.text_field :titles %>        
+              <textarea name="titles"><%= @post.titles %></textarea>        
             </div>
             <div class="content">
               <p>本文</p>
-              <%= form.rich_text_area :content, class: "custom-text" %>
+              <textarea name="content"><%= @post.content %></textarea>
 
             </div>
           <% end %>
