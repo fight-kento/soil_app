@@ -38,7 +38,7 @@
   /* 共通レイアウト ================================ */
   body {
     color: #2d3133;
-    background-color: rgb(230, 227, 224);
+    background-color: #f5f6f6;
     margin: 0;
     min-height: 1vh;
   }
@@ -59,14 +59,27 @@
     width: 90%;
     align-items: flex-start;
   }
-  
-/* メディアクエリ */
-@media (max-width: 800px) {
-  .search-form,
-  .user-ranking {
-    display: none;
+  .home-container{
+    max-width: 80%;
+    margin: 45px auto 0 auto;
+    padding-top:50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+    width: 90%;
+    align-items: flex-start;
   }
-}
+  .user-index-container {
+    max-width: 650px;
+    margin: 0 auto 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+    width: 90%;
+    align-items: flex-start;
+  }
+  
+
 
  
   /* ヘッダー ================================ */
@@ -83,19 +96,20 @@
   .header-logo {
     margin: 0 auto;
     padding-right: 20px;
-    background-color: #976626;
+    background-color: #fff;
     color: white;
     font-size: 30px;
     line-height: 77px;
     padding-left: 20px;
-
   }
 
  
 
   .header-logo a{
-    color: white;
-    font-size: 22px;
+    color: rgb(202, 82, 23);
+    font-size: 30px;
+    margin-left: 75px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
   .header-menus {
@@ -124,9 +138,12 @@
 
 
   .search-form input[type="text"] {
-    width: 400px;
-    height: 35px;
-
+    width: 90%;
+    height: 40px;
+    font-size: 18px;
+    background-color: #e1e5e5;
+    border: none;
+    border-radius: 10px;
   }
   
 
@@ -140,12 +157,37 @@
     color: white;
   }
 
-  .submit{
-    background: url(/search.png) no-repeat center;
-    background-size: 20px 20px;
-    padding-left: 18px;
-    padding-bottom: 4px;
-  }
+  @media screen and (max-width: 950px) {
+    .search-form {
+    margin-top: 10px;
+    }
+    .user-ranking {
+      display: none;
+    }
+    .header-logo {
+      margin: 0 auto;
+      padding-right: 20px;
+      background-color: #fff;
+      color: white;
+      font-size: 30px;
+      line-height: 60px;
+      padding-left: 20px;
+    }
+    .search-form input[type="text"] {
+      width: 90%;
+      height: 40px;
+      font-size: 18px;
+      background-color: #e1e5e5;
+      border: none;
+      border-radius: 10px;
+    }
+    .header-logo a{
+      color: rgb(202, 82, 23);
+      font-size: 30px;
+      margin-left: 75px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    }
   
 
     /* サイドバー ================================ */
@@ -187,7 +229,7 @@
     label #cancel {
       position: absolute;
       cursor: pointer;
-      background: #b66f2d;
+      background: rgb(202, 82, 23);
       border-radius: 3px;
     }
     
@@ -358,7 +400,7 @@
   }
   
   .form input[type="submit"] {
-    background-color: #398d84;
+    background-color: rgb(202, 82, 23);
     color: white;
     cursor: pointer;
     font-weight: 300;

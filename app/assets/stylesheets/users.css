@@ -20,13 +20,7 @@
   border-radius: 10px;
 }
 
-.posts-index-item {
-  padding: 25px 30px;
-  background-color: white;
-  margin-bottom: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
+
 
 .ranking-index-item {
   padding: 5px 5px;
@@ -70,7 +64,6 @@
 }
 
 .user-right {
-  float: left;
   width: 90%;
   padding-left: 12px;
   text-align: left;
@@ -160,7 +153,7 @@
 
 .user-tabs {
   margin-top: 40px;
-  background-color:#22411b;
+  background-color:rgb(202, 82, 23);
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -171,7 +164,7 @@
 }
 
 .user-tabs li.active {
-  border-bottom: 2px solid #398d84;
+  border-bottom: 2px solid rgb(29, 136, 59);
 }
 
 .user-tabs li.active a {

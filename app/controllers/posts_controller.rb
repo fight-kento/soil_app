@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       @likes_count[post.id] = Like.where(post_id: post.id).count
     end
     @users = User.all
-    @all_ranks = User.joins(:posts).select("users.*, COUNT(posts.id) as post_count").group("users.id").order("post_count desc").limit(3)
+    @all_ranks = User.joins(:posts).select("users.*, COUNT(posts.id) as post_count").group("users.id").order("post_count desc").limit(7)
   end
 
   def  show
@@ -62,9 +62,11 @@ class PostsController < ApplicationController
   def search
     @posts = Post.search(params[:keyword])
     @keyword = params[:keyword]
+    @users = User.all
+    @all_ranks = User.joins(:posts).select("users.*, COUNT(posts.id) as post_count").group("users.id").order("post_count desc").limit(7)
     render "index"
-    @all_ranks = User.joins(:posts).select("users.*, COUNT(posts.id) as post_count").group("users.id").order("post_count desc").limit(3)
   end
+
 
 
   def post_params

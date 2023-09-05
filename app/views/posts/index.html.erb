@@ -1,24 +1,20 @@
 <div class="main posts-index">
-
-ランキングの画面を、検索しても消えないようにしよう
-
-<div class="user-ranking">
-  <h1 class="ranking-heading">Ranking</h1>
-  <% @all_ranks.each.with_index(1) do |user, rank| %>
-    <p><%= rank %>位</p>
-    <div class="ranking-index-item">
-      <div class="ranking-left">
-        <img src="<%= "/user_images/#{user.image}" %>">
+  <div class="user-ranking">
+    <h1 class="ranking-heading">Ranking</h1>
+    <% @all_ranks.each.with_index(1) do |user, rank| %>
+      <p><%= rank %>位</p>
+      <div class="ranking-index-item">
+        <div class="ranking-left">
+         <img src="<%= "/user_images/#{user.image}" %>">
+        </div>
+        <div class="ranking-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
       </div>
-      <div class="ranking-right">
-        <%= link_to(user.name, "/users/#{user.id}") %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-  <div class="container">
-    <h1 class="users-heading">最近の投稿</h1>
+  <div class="home-container">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
