@@ -101,6 +101,8 @@
     font-size: 30px;
     line-height: 77px;
     padding-left: 20px;
+    margin-bottom: 5px;
+    display: flex;
   }
 
  
@@ -108,7 +110,7 @@
   .header-logo a{
     color: rgb(202, 82, 23);
     font-size: 30px;
-    margin-left: 75px;
+    margin-left: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
@@ -132,8 +134,8 @@
   }
 
   .search-form{
-    max-width: 500px;
-    margin: -80px auto 0;
+    min-width: 500px;
+    margin: 0 auto ;
   }
 
 
@@ -157,9 +159,9 @@
     color: white;
   }
 
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 800px) {
     .search-form {
-    margin-top: 10px;
+      text-align: center;
     }
     .user-ranking {
       display: none;
@@ -170,8 +172,8 @@
       background-color: #fff;
       color: white;
       font-size: 30px;
-      line-height: 60px;
       padding-left: 20px;
+      display: block;
     }
     .search-form input[type="text"] {
       width: 90%;
@@ -184,8 +186,17 @@
     .header-logo a{
       color: rgb(202, 82, 23);
       font-size: 30px;
-      margin-left: 75px;
+      margin-left: 30px;
       font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .sidebar {
+      position: absolute;
+      background-color:white;
+      width: 200px;
+      z-index: 5;
+      overflow: hidden;
+      box-shadow: 0 2px 6px #c1ced7;
+      margin-top: -85px;
     }
     }
   
@@ -198,7 +209,6 @@
       z-index: 5;
       overflow: hidden;
       box-shadow: 0 2px 6px #c1ced7;
-      margin-top: 5px;
     }
     
 
