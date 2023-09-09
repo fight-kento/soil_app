@@ -10,7 +10,7 @@
           <%= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %> 
         </p>
         <% if @user == current_user %>
-          <p class="lead text-muted">You're currently signed in as <%= current_user.email %></p>
+ 
         <% else %>
           <% if current_user.following?(@user) %>
             <%= link_to user_relationships_path(@user),data: { "turbo-method": :delete },allow_other_host: true do %>
@@ -35,7 +35,7 @@
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
     <% @user.posts.each do |post| %>
-      <div class="posts-index-item">
+      <div class="posts-shows-item">
         <div class="post-left">
           <img src="<%= "/user_images/#{post.user.image}" %>">
         </div>
