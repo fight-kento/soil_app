@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'users/destroy', to: 'users/sessions#destroy'
   end 
   
+  resources :posts
+  root 'posts#index'
 
   get '/'=>'posts#index'
   get 'about'=>'home#about'
