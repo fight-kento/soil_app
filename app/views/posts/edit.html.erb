@@ -1,0 +1,26 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
+      <div class="form">
+        <div class="form-body">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <%= form_with(url: posts_new_path, local: true) do |form| %>
+            <div class="titles">
+              <p>タイトル</p>
+              <%= form.text_field :title, value: @post.titles %>        
+            </div>
+            <div class="content">
+              <p>本文</p>
+             <textarea name="content"><%= @post.content %></textarea>            </div>
+          <% end %>
+          <input type="submit" value="保存">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

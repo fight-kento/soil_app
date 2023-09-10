@@ -1,0 +1,51 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/user_images/#{@user.image}" %>">
+      <h2><%= @user.name %></h2>
+
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <p class="text-small">
+          <%= link_to "#{@user.followings.count} フォロー", followings_user_path(@user) %>
+          <%= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %> 
+        </p>
+        <% if @user == current_user %>
+
+        <% else %>
+          <% if current_user.following?(@user) %>
+            <%= link_to user_relationships_path(@user),data: { "turbo-method": :delete },allow_other_host: true do %>
+              <button class="btn btn-primary">フォロー解除</button>
+            <% end%>
+          <% else%>
+            <%= link_to user_relationships_path(@user),data: { "turbo-method": :post },allow_other_host: true do %>
+              <button class="btn btn-primary">フォロー</button>
+            <% end%>
+          <% end%>
+        <% end%>
+      </div>
+
+      <% if @user.id == current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+      <% end %>
+    </div>
+    <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+  
+    <% @likes.each do |like| %>
+      <% post = Post.find_by(id: like.post_id) %>
+      <div class="posts-shows-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

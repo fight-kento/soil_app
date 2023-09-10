@@ -1,0 +1,19 @@
+
+<div class="login-form">
+<h2>ログイン</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { style: "text-align: center;" }) do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password" ,placeholder: "パスワード"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "続ける" %>
+  </div>
+<% end %>
+
+</div>

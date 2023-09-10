@@ -1,0 +1,28 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <%= form_with(url: posts_new_path, local: true) do |form| %>
+            <div class="titles">
+              <p>タイトル</p>
+              <textarea name="titles"><%= @post.titles %></textarea>        
+            </div>
+            <div class="content">
+              <p>本文</p>
+              <textarea name="content"><%= @post.content %></textarea>
+
+            </div>
+          <% end %>
+          <input type="submit" value="投稿">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

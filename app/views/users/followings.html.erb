@@ -1,0 +1,32 @@
+<div class="main users-follow">
+  <div class="container">
+      <h1 class="users-heading">FOLLOWING</h1>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |users| %>
+            <tr>
+              <td>
+                        <%= link_to user_path(users), class: "user-link" do %>
+                        <div class="user-container">
+                            <div class="user-left">
+                                <img src="<%= "/user_images/#{users.image}" %>">
+                            </div>
+                            <div class="user-right">
+                                <%= users.name %>
+                            </div>
+                            </div>
+                        <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+  </div>
+</div>

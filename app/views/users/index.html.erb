@@ -1,0 +1,30 @@
+<div class="main users-index">
+<div class="user-ranking">
+  <h1 class="ranking-heading">Ranking</h1>
+  <% @all_ranks.each.with_index(1) do |user, rank| %>
+    <p><%= rank %>位</p>
+    <div class="ranking-index-item">
+      <div class="ranking-left">
+        <img src="<%= "/user_images/#{user.image}" %>">
+      </div>
+      <div class="ranking-right">
+        <%= link_to(user.name, "/users/#{user.id}") %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+  <div class="user-index-container">
+    <h1 class="users-heading">User</h1>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image}" %>">
+        </div>
+        <div class="user-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

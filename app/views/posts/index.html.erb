@@ -1,0 +1,37 @@
+<div class="main posts-index">
+  <div class="user-ranking">
+    <h1 class="ranking-heading">Ranking</h1>
+    <% @all_ranks.each.with_index(1) do |user, rank| %>
+      <p><%= rank %>位</p>
+      <div class="ranking-index-item">
+        <div class="ranking-left">
+         <img src="<%= "/user_images/#{user.image}" %>">
+        </div>
+        <div class="ranking-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="home-container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <div class="post-titles">
+            <%= link_to(post.titles, "/posts/#{post.id}") %>
+            <div class="post-time">
+              <%= time_ago_in_words(post.updated_at) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
