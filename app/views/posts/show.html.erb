@@ -2,7 +2,7 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
-        <div class="user-left">
+        <div class="show-user-left">
           <img src="<%= "/user_images/#{@user.image}" %>">
         </div> 
         <div class="user-right">
@@ -37,7 +37,7 @@
       <hr>
       <% @comments.each do |comment| %>
         <div class="post-user-name">
-          <div class="user-left"> 
+          <div class="show-user-left"> 
             <img src="<%= "/user_images/#{comment.user.image}" %>">
           </div> 
           <div class="user-right">
@@ -54,7 +54,7 @@
       <% end %>
 
       <%= form_for [@post, @comment] do |f| %>
-        <%= f.text_field :comment_content, style: "width: 300px; height: 100px;" %>
+        <%= f.text_field :comment_content, style: "width: 300px; height: 50px;" %>
 <br>
         <%= f.submit 'コメントする' %>
       <% end %>
