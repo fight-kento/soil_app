@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_03_131357) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_16_103459) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -66,8 +66,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_131357) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "posts" because of following StandardError
-#   Unknown type '' for column 'titles'
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.text "content"
+    t.text "content_html"
+    t.string "titles"
+  end
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"

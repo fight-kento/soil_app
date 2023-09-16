@@ -162,6 +162,7 @@
   @media screen and (max-width: 800px) {
     .search-form {
       text-align: center;
+      min-width: auto;
     }
     .user-ranking {
       display: none;
@@ -197,6 +198,16 @@
       overflow: hidden;
       box-shadow: 0 2px 6px #c1ced7;
       margin-top: -85px;
+    }
+    .home-container{
+      max-width: 95%;
+      margin: 45px auto 0 auto;
+      padding-top:50px;
+      padding-left: 1px;
+      padding-right: 1px;
+      clear: both;
+      width: 90%;
+      align-items: flex-start;
     }
     }
   
