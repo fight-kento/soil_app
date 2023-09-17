@@ -36,6 +36,13 @@
   object-fit: cover;
 }
 
+.show-user-left img {
+  width: 20px;
+  height: 20px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
 .ranking-left img{
   width: 20px;
   height: 20px;
@@ -57,6 +64,13 @@
   float: left;
   padding-left: 12px;
 }
+
+.show-user-left {
+  float: left;
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
 
 .rankning-left{
   float: left;
