@@ -67,11 +67,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_103459) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.text "content"
-    t.text "content_html"
     t.string "titles"
   end
 
@@ -91,8 +90,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_103459) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_name"
     t.string "image"
-    t.string "title"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
