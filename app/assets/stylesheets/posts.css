@@ -159,7 +159,13 @@
   margin: 2px;
 }
 
-
+.comment-text-field {
+  width: 100%;
+  min-height: 100px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  resize: none;
+}
 
 /* posts/new ================================ */
 
