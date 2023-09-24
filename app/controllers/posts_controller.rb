@@ -53,6 +53,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
+    @post.titles = params[:titles]
     @post.content = params[:content]
     @post.destroy
     flash[:notice] = "投稿を削除しました"
