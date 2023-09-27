@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  before_create :set_default_image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -32,5 +34,9 @@ class User < ApplicationRecord
   def posts
     return Post.where(user_id:self.id)
   end
-        
+   
+  
+  def set_default_image
+    self.image = "noimage.jpg" if image.blank?
+  end
 end

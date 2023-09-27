@@ -26,6 +26,13 @@
   font-weight: 500;
 }
 
+.post-users-name a {
+  font-weight: 500;
+  color: gray;
+font-size: 13px;
+}
+
+
 .post-user-name a:hover {
   color: #3ecdc6;
 }
@@ -42,14 +49,18 @@
 
 .user-ranking{
   max-width: 300px;
-  padding-left: 60px;
+  padding-left: 35px;
   padding-right: 15px;
 }
 
 .ranking-heading{
-  font-weight: 300;
   margin: 110px 0 20px;
-  font-size: 20px;
+  font-size: 15px;
+  color: rgb(202, 82, 23);
+}
+
+.ranking-right a:hover {
+  color: #3ecdc6;
 }
 
 .post-titles{
@@ -92,16 +103,19 @@
   object-fit: cover;
 }
 
-.posts-show-item .post-user-name a {
+.posts-show-item .post-comment-user-name a {
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 13px;
+  color: gray;
 }
 
 
 .post-show-title {
   font-size: 24px;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  margin-top: 18px;
+  margin-bottom: 5px;
+  font-family: serif;
+  font-weight: 700;
 }
 
 .post-show-content {
@@ -109,14 +123,15 @@
 }
 
 .post-show-comment{
-  font-size: 20px;
-  margin-top: 25px;
-
+  font-size: 17px;
+  margin-top: 4px;
+  margin-left: 15px;
+  font-family: serif;
 }
 
 .post-time {
   color: #8899a6;
-  font-size: 14px;
+  font-size: 12px;
 
   margin-right: 100px;
 }
@@ -144,10 +159,11 @@
   font-size: 14px;
 }
 
-.post_message {
-  display: flex;
-
-
+.post_message p{
+  font-size: 16px;
+  font-family: serif;
+  margin-bottom: 12px;
+  margin-left: 12px;
 }
 
 
