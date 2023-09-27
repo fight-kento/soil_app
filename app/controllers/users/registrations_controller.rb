@@ -16,7 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
      @user = User.new(
       name: params[:name],
       email: params[:email],
-      image: "default_user.jpg"
     )
    end
 

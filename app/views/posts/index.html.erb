@@ -1,6 +1,6 @@
 <div class="main posts-index">
   <div class="user-ranking">
-    <h1 class="ranking-heading">Ranking</h1>
+    <h1 class="ranking-heading">☆投稿数ランキング</h1>
     <% @all_ranks.each.with_index(1) do |user, rank| %>
       <p><%= rank %>位</p>
       <div class="ranking-index-item">
@@ -22,10 +22,18 @@
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            <%if current_user%>
+              <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            <%else%>
+              <%= link_to(post.user.name,"/users/sign_in")%>
+            <% end%>
           </div>
           <div class="post-titles">
-            <%= link_to(post.titles, "/posts/#{post.id}") %>
+            <%if current_user%>
+              <%= link_to(post.titles, "/posts/#{post.id}") %>
+            <%else%>
+              <%= link_to(post.user.name,"/users/sign_in")%>
+            <% end%>
             <div class="post-time">
               <%= time_ago_in_words(post.updated_at) %>
             </div>
