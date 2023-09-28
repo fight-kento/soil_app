@@ -24,7 +24,18 @@
 
 .post-user-name a {
   font-weight: 500;
+  color: gray;
+  font-size: 12px;
 }
+
+.post-user-titles a{
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: serif;
+}
+
 
 .post-users-name a {
   font-weight: 500;
@@ -34,6 +45,10 @@ font-size: 13px;
 
 
 .post-user-name a:hover {
+  color: #3ecdc6;
+}
+
+.post-user-titles a:hover {
   color: #3ecdc6;
 }
 
@@ -71,6 +86,7 @@ font-size: 13px;
 .post-titles a {
   font-weight: 700;
   font-size: 20px;
+  font-family: serif;
 }
 
 
@@ -132,8 +148,21 @@ font-size: 13px;
 .post-time {
   color: #8899a6;
   font-size: 12px;
-
+  margin-top: 5px;
   margin-right: 100px;
+}
+
+.post-comment-time{
+  color: #8899a6;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 100px;
+  margin-bottom: 16px;
+}
+
+.post-comment-user-name{
+margin-top: 15px;
+
 }
 
 .unliked-btn {

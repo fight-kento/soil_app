@@ -43,7 +43,9 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
-          <%= link_to(post.titles, "/posts/#{post.id}") %>
+          <div class="post-user-titles">
+            <%= link_to(post.titles, "/posts/#{post.id}") %>
+          </div>
         </div>
       </div>
     <% end %>
