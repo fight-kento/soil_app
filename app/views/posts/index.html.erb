@@ -32,7 +32,7 @@
             <%if current_user%>
               <%= link_to(post.titles, "/posts/#{post.id}") %>
             <%else%>
-              <%= link_to(post.user.name,"/users/sign_in")%>
+              <%= link_to(post.titles,"/users/sign_in")%>
             <% end%>
             <div class="post-time">
               <%= time_ago_in_words(post.updated_at) %>

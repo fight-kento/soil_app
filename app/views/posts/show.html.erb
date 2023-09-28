@@ -1,6 +1,7 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+      <div class="post-contents-show">
       <div class="post-users-name">
         <div class="user-left">
           <img src="<%= "/user_images/#{@user.image}" %>">
@@ -35,6 +36,7 @@
           </div>
         <% end%>
       <% end%>
+      </div>
       <br>
       <hr>
       <% @comments.each do |comment| %>
@@ -49,7 +51,7 @@
         <div class="post-show-comment">
           <%= comment.comment_content %>
         </div>
-        <div class="post-time">
+        <div class="post-comment-time">
           <%= comment.created_at.to_s(:datetime_jp) %>
         </div>
         <hr>
