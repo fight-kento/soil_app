@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @post = Post.find_by(id: params[:id])
     @likes_count = {}
     @posts.each do |post|
       @likes_count[post.id] = Like.where(post_id: post.id).count

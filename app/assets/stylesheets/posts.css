@@ -22,6 +22,15 @@
   object-fit: cover;
 }
 
+.header-post-left img{
+  width: 30px;
+  height: 30px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  margin-right: 81px;
+}
+
 .post-user-name a {
   font-weight: 500;
   color: gray;
@@ -33,7 +42,10 @@
   color: #2d3133;
   font-size: 20px;
   font-weight: 900;
-  font-family: serif;
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
 }
 
 
@@ -46,6 +58,11 @@ font-size: 13px;
 
 .post-user-name a:hover {
   color: #3ecdc6;
+}
+
+.post-titles a:hover{
+  color: #3ecdc6;
+
 }
 
 .post-user-titles a:hover {
@@ -86,7 +103,10 @@ font-size: 13px;
 .post-titles a {
   font-weight: 700;
   font-size: 20px;
-  font-family: serif;
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
 }
 
 
@@ -130,7 +150,10 @@ font-size: 13px;
   font-size: 24px;
   margin-top: 18px;
   margin-bottom: 5px;
-  font-family: serif;
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
   font-weight: 700;
 }
 
@@ -142,7 +165,10 @@ font-size: 13px;
   font-size: 17px;
   margin-top: 4px;
   margin-left: 15px;
-  font-family: serif;
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
 }
 
 .post-time {
@@ -190,7 +216,10 @@ margin-top: 15px;
 
 .post_message p{
   font-size: 16px;
-  font-family: serif;
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
   margin-bottom: 12px;
   margin-left: 12px;
 }

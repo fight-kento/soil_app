@@ -42,10 +42,10 @@
       <% @comments.each do |comment| %>
         <div class="post-comment-user-name">
           <div class="user-left"> 
-            <img src="<%= "/user_images/#{current_user.image}" %>">
+            <img src="<%= "/user_images/#{comment.user.image}" %>">
           </div> 
           <div class="user-right">
-            <%= link_to(current_user.name, "/users/#{current_user.id}") %>
+            <%= link_to(comment.user.name, "/users/#{comment.user.id}") %>
           </div>
         </div>
         <div class="post-show-comment">

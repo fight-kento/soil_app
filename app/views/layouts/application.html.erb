@@ -16,7 +16,7 @@
       <%= link_to("土木メモ", "/") %>
       <div class="search-form">
         <%= form_with url: search_path, method: :get, local: true do |f| %>
-          <%= f.text_field :keyword, value: @keyword, class: "white-text",placeholder:"   検索" %>
+          <%= f.text_field :keyword, value: @keyword, class: "white-text",placeholder:"検索" %>
         <% end %>
       </div>
     </div>
@@ -29,6 +29,10 @@
         <ul>
           <li>
             <a href="/posts/new">⚫︎新規投稿</a>
+          </li>
+          <li>
+         
+            <a href="<%= user_path(current_user.id) %>">⚫︎マイページ</a>
           </li>
           <li>
            <a href="/posts/index">⚫︎投稿一覧</a>
